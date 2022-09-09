@@ -45,7 +45,7 @@ public class Universo implements Serializable{
 
     @Override
     public String toString() {
-        return "Universo{" + "nombre=" + nombre + ", numero de seres vivoss=" + numero + ", lista=" + lista + '}';
+        return "Nombre=" + nombre + ", Numero de seres vivoss=" + numero + ", Lista de seres vivos=" + lista;
     }
     
     

@@ -32,7 +32,7 @@ public class AdminSerVivo_lista {
         this.archivo = archivo;
     }
     
-    public void setUniverso(SerVivo ser){
+    public void setServivo(SerVivo ser){
         this.lista.add(ser);
     }
     

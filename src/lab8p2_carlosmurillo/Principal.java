@@ -7,6 +7,7 @@ package lab8p2_carlosmurillo;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -19,35 +20,35 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        
+        try{
         String archivo1 = "./archivos/Listas/Lista_de_universos.ltuni";
         AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo1);
         
         ltuni.cargarArchivo();
-        ArrayList<Universo> lista2 = ltuni.getLista();
+        ArrayList<Universo> lista1 = ltuni.getLista();
         ltuni.escribirArchivo();
         
         
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (int i = 0; i < lista2.size(); i++) {
-            String nombre2 = lista2.get(i).getNombre();
-            modelo.addElement(nombre2);
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista1.size(); i++) {
+            String nombre1 = lista1.get(i).getNombre();
+            modelo1.addElement(nombre1);
         }
-        combo_universos.setModel(modelo);
+        combo_universos.setModel(modelo1);
         
         String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
         AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
         
-        ltuni.cargarArchivo();
-        ArrayList<Universo> lista2 = ltuni.getLista();
-        ltuni.escribirArchivo();
-        
-        
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        ltser.cargarArchivo();
+        ArrayList<SerVivo> lista2 = ltser.getLista();
+        ltser.escribirArchivo();
         for (int i = 0; i < lista2.size(); i++) {
-            String nombre2 = lista2.get(i).getNombre();
-            modelo.addElement(nombre2);
+            System.out.println(lista2.get(i)+"aaaaaaaa");
         }
-        combo_universos.setModel(modelo);
+        }catch(Exception e){
+            
+        }
         jPanel3.setVisible(false);
     }
 
@@ -64,6 +65,9 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
+        iniciar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lista_seres = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         t_universo = new javax.swing.JTextField();
@@ -105,13 +109,27 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        iniciar.setText("Iniciar");
+        iniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iniciarMouseClicked(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(lista_seres);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(iniciar)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -119,7 +137,11 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(iniciar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cargar Seres Vivos", jPanel1);
@@ -248,14 +270,13 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(t_ser_nombre, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(b_1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(b_1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(b_10, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(b_4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -426,6 +447,22 @@ public class Principal extends javax.swing.JFrame {
         uni.escribirArchivo();
         t_universo.setText("");
         
+        String archivo1 = "./archivos/Listas/Lista_de_universos.ltuni";
+        AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo1);
+        
+        ltuni.cargarArchivo();
+        ltuni.setUniverso(universo);
+        ArrayList<Universo> lista1 = ltuni.getLista();
+        ltuni.escribirArchivo();
+        
+        
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista1.size(); i++) {
+            String nombre1 = lista1.get(i).getNombre();
+            modelo1.addElement(nombre1);
+        }
+        combo_universos.setModel(modelo1);
+        
         
     }//GEN-LAST:event_b_crear_universoMouseClicked
 
@@ -487,6 +524,17 @@ public class Principal extends javax.swing.JFrame {
         t_ser_id.setText("");
         sp_edad.setValue(0);
         
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltser.cargarArchivo();
+        ltser.setServivo(servivo);
+        ArrayList<SerVivo> lista2 = ltser.getLista();
+        ltser.escribirArchivo();
+        for (int i = 0; i < lista2.size(); i++) {
+            System.out.println(lista2.get(i));
+        }
+        
         
     }//GEN-LAST:event_b_crear_serMouseClicked
 
@@ -500,6 +548,22 @@ public class Principal extends javax.swing.JFrame {
         
         area.setText(servivo.toString());
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltser.cargarArchivo();
+        ArrayList<SerVivo> lista2 = ltser.getLista();
+        ltser.escribirArchivo();
+        
+        DefaultListModel modelo = new DefaultListModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre = lista2.get(i).toString();
+            modelo.addElement(nombre);
+        }
+        lista_seres.setModel(modelo);
+    }//GEN-LAST:event_iniciarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -553,6 +617,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_raza;
     private javax.swing.JComboBox<String> combo_universos;
     private javax.swing.ButtonGroup escala_de_poder;
+    private javax.swing.JButton iniciar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -568,10 +633,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList<String> lista_seres;
     private javax.swing.JTextField nombre;
     private javax.swing.JSpinner sp_edad;
     private javax.swing.JTextField t_ser_id;
