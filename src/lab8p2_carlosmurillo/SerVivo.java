@@ -74,7 +74,7 @@ public class SerVivo implements Serializable{
 
     @Override
     public String toString() {
-        return "Nombre=" + nombre + ", ID=" + id + ", Nivel de Poder=" + nivel + ", Años=" + edad + ", Universo=" + universo + ", Raza=" + raza ;
+        return "Nombre=" + nombre +", Universo=" + universo ;
     }
     
     
