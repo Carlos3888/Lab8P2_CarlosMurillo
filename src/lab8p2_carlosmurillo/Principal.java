@@ -764,7 +764,7 @@ public class Principal extends javax.swing.JFrame {
         
         ltser.cargarArchivo();
         int posi = combo_seres.getSelectedIndex();
-        ltser.getLista().get(posi).setNombre(nombre);
+        ltser.getLista().get(posi).setNombre(nom);
         ltser.getLista().get(posi).setId(id);
         ltser.getLista().get(posi).setNivel(poder);
         ltser.getLista().get(posi).setEdad(edad);
