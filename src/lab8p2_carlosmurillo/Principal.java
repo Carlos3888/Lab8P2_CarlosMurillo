@@ -46,6 +46,13 @@ public class Principal extends javax.swing.JFrame {
         ArrayList<SerVivo> lista2 = ltser.getLista();
         ltser.escribirArchivo();
         
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre1 = lista2.get(i).getNombre();
+            modelo2.addElement(nombre1);
+        }
+        combo_seres.setModel(modelo2);
+        
         }catch(Exception e){
             
         }
@@ -98,6 +105,33 @@ public class Principal extends javax.swing.JFrame {
         b_10 = new javax.swing.JRadioButton();
         sp_edad = new javax.swing.JSpinner();
         b_crear_ser = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        t_ser_nombre1 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
+        t_ser_id1 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        b_11 = new javax.swing.JRadioButton();
+        b_12 = new javax.swing.JRadioButton();
+        b_13 = new javax.swing.JRadioButton();
+        b_14 = new javax.swing.JRadioButton();
+        b_15 = new javax.swing.JRadioButton();
+        b_16 = new javax.swing.JRadioButton();
+        jLabel11 = new javax.swing.JLabel();
+        combo_universos1 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        combo_raza1 = new javax.swing.JComboBox<>();
+        b_17 = new javax.swing.JRadioButton();
+        b_18 = new javax.swing.JRadioButton();
+        b_19 = new javax.swing.JRadioButton();
+        b_20 = new javax.swing.JRadioButton();
+        sp_edad1 = new javax.swing.JSpinner();
+        b_crear_ser1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        combo_seres = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -346,6 +380,179 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Ser Vivo", jPanel3);
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setText("Nombre");
+
+        t_ser_nombre1.setBorder(null);
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel9.setText("ID");
+
+        t_ser_id1.setBorder(null);
+
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel10.setText("Escala de Poder");
+
+        escala_de_poder.add(b_11);
+        b_11.setText("2");
+
+        escala_de_poder.add(b_12);
+        b_12.setText("3");
+
+        escala_de_poder.add(b_13);
+        b_13.setText("5");
+
+        escala_de_poder.add(b_14);
+        b_14.setText("6");
+
+        escala_de_poder.add(b_15);
+        b_15.setText("8");
+
+        escala_de_poder.add(b_16);
+        b_16.setText("9");
+
+        jLabel11.setText("Años");
+
+        jLabel12.setText("Universo de procedencia");
+
+        jLabel13.setText("Raza");
+
+        combo_raza1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
+
+        escala_de_poder.add(b_17);
+        b_17.setText("1");
+
+        escala_de_poder.add(b_18);
+        b_18.setText("4");
+
+        escala_de_poder.add(b_19);
+        b_19.setText("7");
+
+        escala_de_poder.add(b_20);
+        b_20.setText("10");
+
+        b_crear_ser1.setText("Modificar");
+        b_crear_ser1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_crear_ser1MouseClicked(evt);
+            }
+        });
+
+        jLabel14.setText("Seleccionar ser vivo");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(b_17, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(b_20, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(b_18, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(b_19, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_16, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(combo_seres, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(t_ser_id1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(t_ser_nombre1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(combo_universos1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(combo_raza1, 0, 150, Short.MAX_VALUE)
+                    .addComponent(sp_edad1)
+                    .addComponent(b_crear_ser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(145, 145, 145))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sp_edad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_seres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(combo_universos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(combo_raza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(b_crear_ser1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(t_ser_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(t_ser_id1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_17)
+                    .addComponent(b_11)
+                    .addComponent(b_12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_18)
+                    .addComponent(b_13)
+                    .addComponent(b_14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_19)
+                    .addComponent(b_15)
+                    .addComponent(b_16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b_20)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Modificar Ser Vivo", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -458,6 +665,14 @@ public class Principal extends javax.swing.JFrame {
         }
         
         
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre1 = lista2.get(i).getNombre();
+            modelo1.addElement(nombre1);
+        }
+        combo_seres.setModel(modelo1);
+        
+        
         try{
             String archivo3 = "./archivos/Universos/";
             archivo3 += universo+".uni";
@@ -494,6 +709,10 @@ public class Principal extends javax.swing.JFrame {
         
         hilo.start();
     }//GEN-LAST:event_iniciarMouseClicked
+
+    private void b_crear_ser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_ser1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_crear_ser1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -533,7 +752,17 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton b_1;
     private javax.swing.JRadioButton b_10;
+    private javax.swing.JRadioButton b_11;
+    private javax.swing.JRadioButton b_12;
+    private javax.swing.JRadioButton b_13;
+    private javax.swing.JRadioButton b_14;
+    private javax.swing.JRadioButton b_15;
+    private javax.swing.JRadioButton b_16;
+    private javax.swing.JRadioButton b_17;
+    private javax.swing.JRadioButton b_18;
+    private javax.swing.JRadioButton b_19;
     private javax.swing.JRadioButton b_2;
+    private javax.swing.JRadioButton b_20;
     private javax.swing.JRadioButton b_3;
     private javax.swing.JRadioButton b_4;
     private javax.swing.JRadioButton b_5;
@@ -542,31 +771,48 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton b_8;
     private javax.swing.JRadioButton b_9;
     private javax.swing.JButton b_crear_ser;
+    private javax.swing.JButton b_crear_ser1;
     private javax.swing.JButton b_crear_universo;
     javax.swing.JProgressBar barra;
     private javax.swing.JComboBox<String> combo_raza;
+    private javax.swing.JComboBox<String> combo_raza1;
+    private javax.swing.JComboBox<String> combo_seres;
     private javax.swing.JComboBox<String> combo_universos;
+    private javax.swing.JComboBox<String> combo_universos1;
     private javax.swing.ButtonGroup escala_de_poder;
     private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTabbedPane jTabbedPane1;
     javax.swing.JList<String> lista_seres;
     private javax.swing.JSpinner sp_edad;
+    private javax.swing.JSpinner sp_edad1;
     private javax.swing.JTextField t_ser_id;
+    private javax.swing.JTextField t_ser_id1;
     private javax.swing.JTextField t_ser_nombre;
+    private javax.swing.JTextField t_ser_nombre1;
     private javax.swing.JTextField t_universo;
     // End of variables declaration//GEN-END:variables
 }
