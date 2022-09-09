@@ -5,6 +5,7 @@
  */
 package lab8p2_carlosmurillo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ForkJoinWorkerThread;
 import javax.swing.DefaultComboBoxModel;
@@ -53,6 +54,7 @@ public class Principal extends javax.swing.JFrame {
             modelo2.addElement(nombre1);
         }
         combo_seres.setModel(modelo2);
+        combo_seres2.setModel(modelo2);
         
         }catch(Exception e){
             
@@ -130,9 +132,12 @@ public class Principal extends javax.swing.JFrame {
         b_7_2 = new javax.swing.JRadioButton();
         b_10_2 = new javax.swing.JRadioButton();
         sp_edad1 = new javax.swing.JSpinner();
-        b_crear_ser1 = new javax.swing.JButton();
+        b_modificar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         combo_seres = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        combo_seres2 = new javax.swing.JComboBox<>();
+        eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,7 +159,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(barra, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                    .addComponent(barra, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(iniciar)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -201,7 +206,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(b_crear_universo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t_universo, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                     .addComponent(jSeparator1))
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,10 +440,10 @@ public class Principal extends javax.swing.JFrame {
         escala_de_poder.add(b_10_2);
         b_10_2.setText("10");
 
-        b_crear_ser1.setText("Modificar");
-        b_crear_ser1.addMouseListener(new java.awt.event.MouseAdapter() {
+        b_modificar.setText("Modificar");
+        b_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                b_crear_ser1MouseClicked(evt);
+                b_modificarMouseClicked(evt);
             }
         });
 
@@ -498,7 +503,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(combo_universos1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(combo_raza1, 0, 150, Short.MAX_VALUE)
                     .addComponent(sp_edad1)
-                    .addComponent(b_crear_ser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(b_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(145, 145, 145))
         );
         jPanel5Layout.setVerticalGroup(
@@ -521,7 +526,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(combo_raza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(b_crear_ser1)
+                .addComponent(b_modificar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
@@ -560,13 +565,43 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificar Ser Vivo", jPanel5);
 
+        eliminar.setText("Eliminar");
+        eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(combo_seres2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(combo_seres2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(eliminar)
+                .addContainerGap(274, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar Ser Vivo", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -677,6 +712,7 @@ public class Principal extends javax.swing.JFrame {
             modelo1.addElement(nombre1);
         }
         combo_seres.setModel(modelo1);
+        combo_seres2.setModel(modelo1);
         
         
         try{
@@ -716,12 +752,19 @@ public class Principal extends javax.swing.JFrame {
         hilo.start();
     }//GEN-LAST:event_iniciarMouseClicked
 
-    private void b_crear_ser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_ser1MouseClicked
+    private void b_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_modificarMouseClicked
         
         String archivo = "./archivos/Seres_vivos/";
         String nombre = combo_seres.getSelectedItem().toString();
         archivo += nombre+".ser";
-        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo);
+        
+        String archivo1 = "./archivos/Seres_vivos/";
+        String nombre0 = t_ser_nombre1.getText();
+        archivo1 += nombre0+".ser";
+        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo1);
+        
+        File archivo_ser = new File(archivo);
+        archivo_ser.delete();
         
         String nom = t_ser_nombre1.getText();
         String id = t_ser_id1.getText();
@@ -780,7 +823,8 @@ public class Principal extends javax.swing.JFrame {
             modelo1.addElement(nombre1);
         }
         combo_seres.setModel(modelo1);
-    }//GEN-LAST:event_b_crear_ser1MouseClicked
+        combo_seres2.setModel(modelo1);
+    }//GEN-LAST:event_b_modificarMouseClicked
 
     private void combo_seresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_seresActionPerformed
 
@@ -800,6 +844,32 @@ public class Principal extends javax.swing.JFrame {
         t_ser_id1.setText(id);
         sp_edad1.setValue(edad);
     }//GEN-LAST:event_combo_seresActionPerformed
+
+    private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
+        String archivo = "./archivos/Seres_vivos/";
+        String nombre = combo_seres.getSelectedItem().toString();
+        archivo += nombre+".ser";
+        
+        File archivo_ser = new File(archivo);
+        archivo_ser.delete();
+        
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltser.cargarArchivo();
+        int posi = combo_seres.getSelectedIndex();
+        ltser.getLista().remove(posi);
+        ArrayList<SerVivo> lista2 = ltser.getLista();
+        ltser.escribirArchivo();
+        
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre1 = lista2.get(i).getNombre();
+            modelo1.addElement(nombre1);
+        }
+        combo_seres.setModel(modelo1);
+        combo_seres2.setModel(modelo1);
+    }//GEN-LAST:event_eliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -858,14 +928,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton b_9;
     private javax.swing.JRadioButton b_9_2;
     private javax.swing.JButton b_crear_ser;
-    private javax.swing.JButton b_crear_ser1;
     private javax.swing.JButton b_crear_universo;
+    private javax.swing.JButton b_modificar;
     javax.swing.JProgressBar barra;
     private javax.swing.JComboBox<String> combo_raza;
     private javax.swing.JComboBox<String> combo_raza1;
     private javax.swing.JComboBox<String> combo_seres;
+    private javax.swing.JComboBox<String> combo_seres2;
     private javax.swing.JComboBox<String> combo_universos;
     private javax.swing.JComboBox<String> combo_universos1;
+    private javax.swing.JButton eliminar;
     private javax.swing.ButtonGroup escala_de_poder;
     private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
@@ -885,6 +957,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
