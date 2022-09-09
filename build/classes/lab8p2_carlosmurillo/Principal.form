@@ -536,26 +536,26 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="b_17" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_1_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_11" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_2_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_12" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_3_2" min="-2" pref="46" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="b_20" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="b_10_2" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="b_18" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_4_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_13" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_5_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_14" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_6_2" min="-2" pref="46" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="b_19" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_7_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_15" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_8_2" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="b_16" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="b_9_2" min="-2" pref="46" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -630,24 +630,24 @@
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="b_17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_1_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_2_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_3_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="b_18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_4_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_5_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_6_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="b_19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="b_16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_7_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_8_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_9_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="b_20" min="-2" max="-2" attributes="0"/>
+                      <Component id="b_10_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -697,7 +697,7 @@
                 <Property name="text" type="java.lang.String" value="Escala de Poder"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_11">
+            <Component class="javax.swing.JRadioButton" name="b_2_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -705,7 +705,7 @@
                 <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_12">
+            <Component class="javax.swing.JRadioButton" name="b_3_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -713,7 +713,7 @@
                 <Property name="text" type="java.lang.String" value="3"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_13">
+            <Component class="javax.swing.JRadioButton" name="b_5_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -721,7 +721,7 @@
                 <Property name="text" type="java.lang.String" value="5"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_14">
+            <Component class="javax.swing.JRadioButton" name="b_6_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -729,7 +729,7 @@
                 <Property name="text" type="java.lang.String" value="6"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_15">
+            <Component class="javax.swing.JRadioButton" name="b_8_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -737,7 +737,7 @@
                 <Property name="text" type="java.lang.String" value="8"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_16">
+            <Component class="javax.swing.JRadioButton" name="b_9_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -783,7 +783,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_17">
+            <Component class="javax.swing.JRadioButton" name="b_1_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -791,7 +791,7 @@
                 <Property name="text" type="java.lang.String" value="1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_18">
+            <Component class="javax.swing.JRadioButton" name="b_4_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -799,7 +799,7 @@
                 <Property name="text" type="java.lang.String" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_19">
+            <Component class="javax.swing.JRadioButton" name="b_7_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -807,7 +807,7 @@
                 <Property name="text" type="java.lang.String" value="7"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="b_20">
+            <Component class="javax.swing.JRadioButton" name="b_10_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="escala_de_poder"/>
@@ -836,6 +836,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combo_seresActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>

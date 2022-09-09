@@ -38,6 +38,7 @@ public class Principal extends javax.swing.JFrame {
             modelo1.addElement(nombre1);
         }
         combo_universos.setModel(modelo1);
+        combo_universos1.setModel(modelo1);
         
         String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
         AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
@@ -113,21 +114,21 @@ public class Principal extends javax.swing.JFrame {
         t_ser_id1 = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        b_11 = new javax.swing.JRadioButton();
-        b_12 = new javax.swing.JRadioButton();
-        b_13 = new javax.swing.JRadioButton();
-        b_14 = new javax.swing.JRadioButton();
-        b_15 = new javax.swing.JRadioButton();
-        b_16 = new javax.swing.JRadioButton();
+        b_2_2 = new javax.swing.JRadioButton();
+        b_3_2 = new javax.swing.JRadioButton();
+        b_5_2 = new javax.swing.JRadioButton();
+        b_6_2 = new javax.swing.JRadioButton();
+        b_8_2 = new javax.swing.JRadioButton();
+        b_9_2 = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         combo_universos1 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         combo_raza1 = new javax.swing.JComboBox<>();
-        b_17 = new javax.swing.JRadioButton();
-        b_18 = new javax.swing.JRadioButton();
-        b_19 = new javax.swing.JRadioButton();
-        b_20 = new javax.swing.JRadioButton();
+        b_1_2 = new javax.swing.JRadioButton();
+        b_4_2 = new javax.swing.JRadioButton();
+        b_7_2 = new javax.swing.JRadioButton();
+        b_10_2 = new javax.swing.JRadioButton();
         sp_edad1 = new javax.swing.JSpinner();
         b_crear_ser1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -396,23 +397,23 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel10.setText("Escala de Poder");
 
-        escala_de_poder.add(b_11);
-        b_11.setText("2");
+        escala_de_poder.add(b_2_2);
+        b_2_2.setText("2");
 
-        escala_de_poder.add(b_12);
-        b_12.setText("3");
+        escala_de_poder.add(b_3_2);
+        b_3_2.setText("3");
 
-        escala_de_poder.add(b_13);
-        b_13.setText("5");
+        escala_de_poder.add(b_5_2);
+        b_5_2.setText("5");
 
-        escala_de_poder.add(b_14);
-        b_14.setText("6");
+        escala_de_poder.add(b_6_2);
+        b_6_2.setText("6");
 
-        escala_de_poder.add(b_15);
-        b_15.setText("8");
+        escala_de_poder.add(b_8_2);
+        b_8_2.setText("8");
 
-        escala_de_poder.add(b_16);
-        b_16.setText("9");
+        escala_de_poder.add(b_9_2);
+        b_9_2.setText("9");
 
         jLabel11.setText("Años");
 
@@ -422,17 +423,17 @@ public class Principal extends javax.swing.JFrame {
 
         combo_raza1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
 
-        escala_de_poder.add(b_17);
-        b_17.setText("1");
+        escala_de_poder.add(b_1_2);
+        b_1_2.setText("1");
 
-        escala_de_poder.add(b_18);
-        b_18.setText("4");
+        escala_de_poder.add(b_4_2);
+        b_4_2.setText("4");
 
-        escala_de_poder.add(b_19);
-        b_19.setText("7");
+        escala_de_poder.add(b_7_2);
+        b_7_2.setText("7");
 
-        escala_de_poder.add(b_20);
-        b_20.setText("10");
+        escala_de_poder.add(b_10_2);
+        b_10_2.setText("10");
 
         b_crear_ser1.setText("Modificar");
         b_crear_ser1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -442,6 +443,12 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel14.setText("Seleccionar ser vivo");
+
+        combo_seres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_seresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -453,24 +460,24 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(b_17, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_2_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(b_20, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(b_10_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(b_18, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_5_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(b_6_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(b_19, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_7_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_8_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(b_16, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(b_9_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -533,21 +540,21 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b_17)
-                    .addComponent(b_11)
-                    .addComponent(b_12))
+                    .addComponent(b_1_2)
+                    .addComponent(b_2_2)
+                    .addComponent(b_3_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b_18)
-                    .addComponent(b_13)
-                    .addComponent(b_14))
+                    .addComponent(b_4_2)
+                    .addComponent(b_5_2)
+                    .addComponent(b_6_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b_19)
-                    .addComponent(b_15)
-                    .addComponent(b_16))
+                    .addComponent(b_7_2)
+                    .addComponent(b_8_2)
+                    .addComponent(b_9_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(b_20)
+                .addComponent(b_10_2)
                 .addContainerGap())
         );
 
@@ -607,6 +614,7 @@ public class Principal extends javax.swing.JFrame {
             modelo1.addElement(nombre1);
         }
         combo_universos.setModel(modelo1);
+        combo_universos1.setModel(modelo1);
         
         
     }//GEN-LAST:event_b_crear_universoMouseClicked
@@ -660,9 +668,7 @@ public class Principal extends javax.swing.JFrame {
         ltser.setServivo(servivo);
         ArrayList<SerVivo> lista2 = ltser.getLista();
         ltser.escribirArchivo();
-        for (int i = 0; i < lista2.size(); i++) {
-            System.out.println(lista2.get(i));
-        }
+
         
         
         DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
@@ -711,8 +717,89 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarMouseClicked
 
     private void b_crear_ser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_ser1MouseClicked
-        // TODO add your handling code here:
+        
+        String archivo = "./archivos/Seres_vivos/";
+        String nombre = combo_seres.getSelectedItem().toString();
+        archivo += nombre+".ser";
+        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo);
+        
+        String nom = t_ser_nombre1.getText();
+        String id = t_ser_id1.getText();
+        int poder = 0;
+        if(b_1_2.isSelected()){
+            poder = 1;
+        }else if(b_2_2.isSelected()){
+            poder = 2;
+        }else if(b_3_2.isSelected()){
+            poder = 3;
+        }else if(b_4_2.isSelected()){
+            poder = 4;
+        }else if(b_5_2.isSelected()){
+            poder = 5;
+        }else if(b_6_2.isSelected()){
+            poder = 6;
+        }else if(b_7_2.isSelected()){
+            poder = 7;
+        }else if(b_8_2.isSelected()){
+            poder = 8;
+        }else if(b_9_2.isSelected()){
+            poder = 9;
+        }else if(b_10_2.isSelected()){
+            poder = 10;
+        }
+        int edad = (Integer) sp_edad1.getValue();
+        String universo = combo_universos1.getSelectedItem().toString();
+        String raza = combo_raza1.getSelectedItem().toString();
+        
+        ser.cargarArchivo();
+        SerVivo servivo = new SerVivo(nombre, id, poder, edad, universo, raza);
+        ser.setSer(servivo);
+        ser.escribirArchivo();
+        t_ser_nombre1.setText("");
+        t_ser_id1.setText("");
+        sp_edad1.setValue(0);
+        
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltser.cargarArchivo();
+        int posi = combo_seres.getSelectedIndex();
+        ltser.getLista().get(posi).setNombre(nombre);
+        ltser.getLista().get(posi).setId(id);
+        ltser.getLista().get(posi).setNivel(poder);
+        ltser.getLista().get(posi).setEdad(edad);
+        ltser.getLista().get(posi).setUniverso(universo);
+        ltser.getLista().get(posi).setRaza(raza);
+        ArrayList<SerVivo> lista2 = ltser.getLista();
+        ltser.escribirArchivo();
+        
+        
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre1 = lista2.get(i).getNombre();
+            modelo1.addElement(nombre1);
+        }
+        combo_seres.setModel(modelo1);
     }//GEN-LAST:event_b_crear_ser1MouseClicked
+
+    private void combo_seresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_seresActionPerformed
+
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltser.cargarArchivo();
+        int posi = combo_seres.getSelectedIndex();
+        String nombre = ltser.getLista().get(posi).getNombre();
+        String id = ltser.getLista().get(posi).getId();
+        int poder = ltser.getLista().get(posi).getNivel();
+        int edad = ltser.getLista().get(posi).getEdad();
+        String universo = ltser.getLista().get(posi).getUniverso();
+        String raza = ltser.getLista().get(posi).getRaza();
+        
+        t_ser_nombre1.setText(nombre);
+        t_ser_id1.setText(id);
+        sp_edad1.setValue(edad);
+    }//GEN-LAST:event_combo_seresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -752,24 +839,24 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton b_1;
     private javax.swing.JRadioButton b_10;
-    private javax.swing.JRadioButton b_11;
-    private javax.swing.JRadioButton b_12;
-    private javax.swing.JRadioButton b_13;
-    private javax.swing.JRadioButton b_14;
-    private javax.swing.JRadioButton b_15;
-    private javax.swing.JRadioButton b_16;
-    private javax.swing.JRadioButton b_17;
-    private javax.swing.JRadioButton b_18;
-    private javax.swing.JRadioButton b_19;
+    private javax.swing.JRadioButton b_10_2;
+    private javax.swing.JRadioButton b_1_2;
     private javax.swing.JRadioButton b_2;
-    private javax.swing.JRadioButton b_20;
+    private javax.swing.JRadioButton b_2_2;
     private javax.swing.JRadioButton b_3;
+    private javax.swing.JRadioButton b_3_2;
     private javax.swing.JRadioButton b_4;
+    private javax.swing.JRadioButton b_4_2;
     private javax.swing.JRadioButton b_5;
+    private javax.swing.JRadioButton b_5_2;
     private javax.swing.JRadioButton b_6;
+    private javax.swing.JRadioButton b_6_2;
     private javax.swing.JRadioButton b_7;
+    private javax.swing.JRadioButton b_7_2;
     private javax.swing.JRadioButton b_8;
+    private javax.swing.JRadioButton b_8_2;
     private javax.swing.JRadioButton b_9;
+    private javax.swing.JRadioButton b_9_2;
     private javax.swing.JButton b_crear_ser;
     private javax.swing.JButton b_crear_ser1;
     private javax.swing.JButton b_crear_universo;
