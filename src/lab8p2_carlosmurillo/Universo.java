@@ -39,6 +39,10 @@ public class Universo implements Serializable{
         return lista;
     }
 
+    public void setLista2(ArrayList ser) {
+        this.lista = ser;
+    }
+    
     public void setLista(SerVivo ser) {
         this.lista.add(ser);
     }

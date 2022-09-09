@@ -565,6 +565,8 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificar Ser Vivo", jPanel5);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
         eliminar.setText("Eliminar");
         eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -601,7 +603,7 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -824,6 +826,29 @@ public class Principal extends javax.swing.JFrame {
         }
         combo_seres.setModel(modelo1);
         combo_seres2.setModel(modelo1);
+        
+        
+        try{
+            String archivo3 = "./archivos/Universos/";
+            archivo3 += universo+".uni";
+            AdminUniverso_individual uni = new AdminUniverso_individual(archivo3);
+
+            uni.cargarArchivo();
+            uni.getUniverso().setLista2(lista2);
+            uni.escribirArchivo();
+
+
+            String archivo4 = "./archivos/Listas/Lista_de_universos.ltuni";
+            AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo4);
+
+            int n = combo_universos.getSelectedIndex();
+
+            ltuni.cargarArchivo();
+            ltuni.getLista().get(n).setLista2(lista2);
+            ltuni.escribirArchivo();
+        }catch(Exception e){
+            
+        }
     }//GEN-LAST:event_b_modificarMouseClicked
 
     private void combo_seresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_seresActionPerformed
