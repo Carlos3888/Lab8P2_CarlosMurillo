@@ -6,9 +6,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AdminUniverso_individual {
+public class AdminUniverso_individual{
     Universo universo = new Universo();
     private File archivo = null;
 
@@ -34,11 +35,13 @@ public class AdminUniverso_individual {
     
     public void cargarArchivo() {
         try {            
-            Universo uni;
             if (archivo.exists()) {
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
-                universo = (Universo) objeto.readObject();
+                try {
+                    universo = (Universo) objeto.readObject();
+                } catch (EOFException e) {
+                }
                 objeto.close();
                 entrada.close();
             }            
@@ -53,7 +56,11 @@ public class AdminUniverso_individual {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            bw.writeObject(universo);
+            try{
+                bw.writeObject(universo);
+            }catch(Exception e){
+                
+            }
             bw.flush();
         } catch (Exception ex) {
         } finally {

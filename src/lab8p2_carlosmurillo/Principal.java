@@ -6,6 +6,7 @@
 package lab8p2_carlosmurillo;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -18,6 +19,35 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        String archivo1 = "./archivos/Listas/Lista_de_universos.ltuni";
+        AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo1);
+        
+        ltuni.cargarArchivo();
+        ArrayList<Universo> lista2 = ltuni.getLista();
+        ltuni.escribirArchivo();
+        
+        
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre2 = lista2.get(i).getNombre();
+            modelo.addElement(nombre2);
+        }
+        combo_universos.setModel(modelo);
+        
+        String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
+        AdminSerVivo_lista ltser = new AdminSerVivo_lista(archivo2);
+        
+        ltuni.cargarArchivo();
+        ArrayList<Universo> lista2 = ltuni.getLista();
+        ltuni.escribirArchivo();
+        
+        
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < lista2.size(); i++) {
+            String nombre2 = lista2.get(i).getNombre();
+            modelo.addElement(nombre2);
+        }
+        combo_universos.setModel(modelo);
         jPanel3.setVisible(false);
     }
 
@@ -38,37 +68,38 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         t_universo = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        b_crear_universo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        t_universo1 = new javax.swing.JTextField();
+        t_ser_nombre = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        t_universo2 = new javax.swing.JTextField();
+        t_ser_id = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
+        b_2 = new javax.swing.JRadioButton();
+        b_3 = new javax.swing.JRadioButton();
+        b_5 = new javax.swing.JRadioButton();
+        b_6 = new javax.swing.JRadioButton();
+        b_8 = new javax.swing.JRadioButton();
+        b_9 = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
         combo_universos = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         combo_raza = new javax.swing.JComboBox<>();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jSpinner1 = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
+        b_1 = new javax.swing.JRadioButton();
+        b_4 = new javax.swing.JRadioButton();
+        b_7 = new javax.swing.JRadioButton();
+        b_10 = new javax.swing.JRadioButton();
+        sp_edad = new javax.swing.JSpinner();
+        b_crear_ser = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         area = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
         nombre = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +132,10 @@ public class Principal extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jButton2.setText("Crear");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        b_crear_universo.setText("Crear");
+        b_crear_universo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                b_crear_universoMouseClicked(evt);
             }
         });
 
@@ -119,7 +150,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addComponent(t_universo, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
                         .addComponent(jSeparator1))
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(b_crear_universo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -132,7 +163,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(b_crear_universo)
                 .addContainerGap(235, Short.MAX_VALUE))
         );
 
@@ -142,35 +173,35 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre");
 
-        t_universo1.setBorder(null);
+        t_ser_nombre.setBorder(null);
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setText("ID");
 
-        t_universo2.setBorder(null);
+        t_ser_id.setBorder(null);
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setText("Escala de Poder");
 
-        escala_de_poder.add(jRadioButton1);
-        jRadioButton1.setText("2");
+        escala_de_poder.add(b_2);
+        b_2.setText("2");
 
-        escala_de_poder.add(jRadioButton3);
-        jRadioButton3.setText("3");
+        escala_de_poder.add(b_3);
+        b_3.setText("3");
 
-        escala_de_poder.add(jRadioButton5);
-        jRadioButton5.setText("5");
+        escala_de_poder.add(b_5);
+        b_5.setText("5");
 
-        escala_de_poder.add(jRadioButton6);
-        jRadioButton6.setText("6");
+        escala_de_poder.add(b_6);
+        b_6.setText("6");
 
-        escala_de_poder.add(jRadioButton8);
-        jRadioButton8.setText("8");
+        escala_de_poder.add(b_8);
+        b_8.setText("8");
 
-        escala_de_poder.add(jRadioButton9);
-        jRadioButton9.setText("9");
+        escala_de_poder.add(b_9);
+        b_9.setText("9");
 
         jLabel5.setText("Años");
 
@@ -180,19 +211,24 @@ public class Principal extends javax.swing.JFrame {
 
         combo_raza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
 
-        escala_de_poder.add(jRadioButton11);
-        jRadioButton11.setText("1");
+        escala_de_poder.add(b_1);
+        b_1.setText("1");
 
-        escala_de_poder.add(jRadioButton12);
-        jRadioButton12.setText("4");
+        escala_de_poder.add(b_4);
+        b_4.setText("4");
 
-        escala_de_poder.add(jRadioButton13);
-        jRadioButton13.setText("7");
+        escala_de_poder.add(b_7);
+        b_7.setText("7");
 
-        escala_de_poder.add(jRadioButton14);
-        jRadioButton14.setText("10");
+        escala_de_poder.add(b_10);
+        b_10.setText("10");
 
-        jButton1.setText("Crear");
+        b_crear_ser.setText("Crear");
+        b_crear_ser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_crear_serMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -207,32 +243,32 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_universo2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(t_ser_id, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(t_universo1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(t_ser_nombre, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jRadioButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_10, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(b_6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(b_9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7)
@@ -240,8 +276,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(combo_universos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(combo_raza, 0, 150, Short.MAX_VALUE)
-                    .addComponent(jSpinner1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sp_edad)
+                    .addComponent(b_crear_ser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(145, 145, 145))
         );
         jPanel3Layout.setVerticalGroup(
@@ -253,8 +289,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_universo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_ser_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sp_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -264,7 +300,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(t_universo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(t_ser_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(combo_universos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,22 +311,22 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_raza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3))
+                    .addComponent(b_1)
+                    .addComponent(b_2)
+                    .addComponent(b_3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton12)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(b_4)
+                    .addComponent(b_5)
+                    .addComponent(b_6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton13)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jButton1))
+                    .addComponent(b_7)
+                    .addComponent(b_8)
+                    .addComponent(b_9)
+                    .addComponent(b_crear_ser))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton14)
+                .addComponent(b_10)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -310,6 +346,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("listar ser");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -320,7 +363,10 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jButton3)
+                                .addGap(66, 66, 66)
+                                .addComponent(jButton1))
                             .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -331,7 +377,9 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addComponent(jButton3)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(202, Short.MAX_VALUE))
@@ -359,23 +407,27 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void b_crear_universoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_universoMouseClicked
         String archivo = "./archivos/Universos/";
         String nombre = t_universo.getText();
         archivo += nombre+".uni";
         AdminUniverso_individual uni = new AdminUniverso_individual(archivo);
         
+        
+        
         int numero = 0;
         ArrayList<Universo> lista = new ArrayList();
         
-        Universo universo = new Universo(nombre, numero, lista);
-        uni.setUniverso(universo);
+        
         
         uni.cargarArchivo();
-        
+        Universo universo = new Universo(nombre, numero, lista);
+        uni.setUniverso(universo);
         uni.escribirArchivo();
         t_universo.setText("");
-    }//GEN-LAST:event_jButton2MouseClicked
+        
+        
+    }//GEN-LAST:event_b_crear_universoMouseClicked
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
@@ -389,9 +441,65 @@ public class Principal extends javax.swing.JFrame {
         uni.cargarArchivo();
         Universo universo = uni.getUniverso();
         
-        area.setText(universo.getNombre()+"aaaaaa");
+        area.setText(universo.toString());
 
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void b_crear_serMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_serMouseClicked
+        String archivo = "./archivos/Seres_vivos/";
+        String nombre = t_ser_nombre.getText();
+        archivo += nombre+".ser";
+        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo);
+        
+        String id = t_ser_id.getText();
+        int poder = 0;
+        if(b_1.isSelected()){
+            poder = 1;
+        }else if(b_2.isSelected()){
+            poder = 2;
+        }else if(b_3.isSelected()){
+            poder = 3;
+        }else if(b_4.isSelected()){
+            poder = 4;
+        }else if(b_5.isSelected()){
+            poder = 5;
+        }else if(b_6.isSelected()){
+            poder = 6;
+        }else if(b_7.isSelected()){
+            poder = 7;
+        }else if(b_8.isSelected()){
+            poder = 8;
+        }else if(b_9.isSelected()){
+            poder = 9;
+        }else if(b_10.isSelected()){
+            poder = 10;
+        }
+        int edad = (Integer) sp_edad.getValue();
+        String universo = combo_universos.getSelectedItem().toString();
+        String raza = combo_raza.getSelectedItem().toString();
+        
+        
+        ser.cargarArchivo();
+        SerVivo servivo = new SerVivo(nombre, id, poder, edad, universo, raza);
+        ser.setSer(servivo);
+        ser.escribirArchivo();
+        t_ser_nombre.setText("");
+        t_ser_id.setText("");
+        sp_edad.setValue(0);
+        
+        
+    }//GEN-LAST:event_b_crear_serMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String archivo = "./archivos/Seres_vivos/";
+        String nom = nombre.getText();
+        archivo += nom+".ser";
+        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo);
+        ser.cargarArchivo();
+        SerVivo servivo = ser.getSer();
+        
+        area.setText(servivo.toString());
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -430,11 +538,22 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
+    private javax.swing.JRadioButton b_1;
+    private javax.swing.JRadioButton b_10;
+    private javax.swing.JRadioButton b_2;
+    private javax.swing.JRadioButton b_3;
+    private javax.swing.JRadioButton b_4;
+    private javax.swing.JRadioButton b_5;
+    private javax.swing.JRadioButton b_6;
+    private javax.swing.JRadioButton b_7;
+    private javax.swing.JRadioButton b_8;
+    private javax.swing.JRadioButton b_9;
+    private javax.swing.JButton b_crear_ser;
+    private javax.swing.JButton b_crear_universo;
     private javax.swing.JComboBox<String> combo_raza;
     private javax.swing.JComboBox<String> combo_universos;
     private javax.swing.ButtonGroup escala_de_poder;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -448,25 +567,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nombre;
+    private javax.swing.JSpinner sp_edad;
+    private javax.swing.JTextField t_ser_id;
+    private javax.swing.JTextField t_ser_nombre;
     private javax.swing.JTextField t_universo;
-    private javax.swing.JTextField t_universo1;
-    private javax.swing.JTextField t_universo2;
     // End of variables declaration//GEN-END:variables
 }

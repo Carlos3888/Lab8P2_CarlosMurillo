@@ -1,12 +1,16 @@
 package lab8p2_carlosmurillo;
 
-public class SerVivo {
+import java.io.Serializable;
+
+public class SerVivo implements Serializable{
     private String nombre;
     private String id;
     private int nivel;
     private int edad;
     private String universo;
     private String raza;
+    
+    private static final long SerialVersionUID=88L;
 
     public SerVivo() {
     }

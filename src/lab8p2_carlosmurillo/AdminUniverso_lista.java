@@ -32,6 +32,10 @@ public class AdminUniverso_lista {
         this.archivo = archivo;
     }
     
+    public void setUniverso(Universo uni){
+        this.lista.add(uni);
+    }
+    
     public void cargarArchivo() {
         try {            
             lista = new ArrayList();
