@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Universo implements Serializable{
     private String nombre;
     private int numero;
-    private ArrayList lista;
+    private ArrayList<SerVivo> lista;
     
     private static final long SerialVersionUID=88L;
 
@@ -39,8 +39,8 @@ public class Universo implements Serializable{
         return lista;
     }
 
-    public void setLista(ArrayList lista) {
-        this.lista = lista;
+    public void setLista(SerVivo ser) {
+        this.lista.add(ser);
     }
 
     @Override

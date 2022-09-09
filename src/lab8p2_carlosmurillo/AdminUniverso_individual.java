@@ -33,6 +33,7 @@ public class AdminUniverso_individual{
         this.archivo = archivo;
     }
     
+    
     public void cargarArchivo() {
         try {            
             if (archivo.exists()) {

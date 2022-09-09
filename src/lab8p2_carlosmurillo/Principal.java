@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ForkJoinWorkerThread;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JProgressBar;
 
 /**
  *
@@ -537,6 +538,25 @@ public class Principal extends javax.swing.JFrame {
         }
         
         
+        
+        String archivo3 = "./archivos/Universos/";
+        archivo += universo+".uni";
+        AdminUniverso_individual uni = new AdminUniverso_individual(archivo3);
+        
+        uni.cargarArchivo();
+        uni.getUniverso().setLista(servivo);
+        uni.escribirArchivo();
+        
+        
+        String archivo4 = "./archivos/Listas/Lista_de_universos.ltuni";
+        AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo4);
+        
+        int n = combo_universos.getSelectedIndex();
+        
+        ltuni.cargarArchivo();
+        ltuni.getLista().get(n).setLista(servivo);
+        ltuni.escribirArchivo();
+        
     }//GEN-LAST:event_b_crear_serMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -558,8 +578,7 @@ public class Principal extends javax.swing.JFrame {
         ArrayList<SerVivo> lista2 = ltser.getLista();
         ltser.escribirArchivo();
         
-        
-        Thread hilo = new Thread(new Hilo(lista2));
+        Hilo hilo = new Hilo(lista2, barra, lista_seres);
         
         hilo.start();
     }//GEN-LAST:event_iniciarMouseClicked
