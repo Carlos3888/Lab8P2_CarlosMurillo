@@ -45,9 +45,7 @@ public class Principal extends javax.swing.JFrame {
         ltser.cargarArchivo();
         ArrayList<SerVivo> lista2 = ltser.getLista();
         ltser.escribirArchivo();
-        for (int i = 0; i < lista2.size(); i++) {
-            System.out.println(lista2.get(i)+"aaaaaaaa");
-        }
+        
         }catch(Exception e){
             
         }
@@ -100,12 +98,6 @@ public class Principal extends javax.swing.JFrame {
         b_10 = new javax.swing.JRadioButton();
         sp_edad = new javax.swing.JSpinner();
         b_crear_ser = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        area = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        nombre = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,8 +134,8 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iniciar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Cargar Seres Vivos", jPanel1);
@@ -355,61 +347,6 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Ser Vivo", jPanel3);
 
-        area.setColumns(20);
-        area.setRows(5);
-        jScrollPane1.setViewportView(area);
-
-        jButton3.setText("listar");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton3MouseEntered(evt);
-            }
-        });
-
-        jButton1.setText("listar ser");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addGap(66, 66, 66)
-                                .addComponent(jButton1))
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab4", jPanel4);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -468,22 +405,6 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_b_crear_universoMouseClicked
 
-    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MouseEntered
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        String archivo = "./archivos/Universos/";
-        String nom = nombre.getText();
-        archivo += nom+".uni";
-        AdminUniverso_individual uni = new AdminUniverso_individual(archivo);
-        uni.cargarArchivo();
-        Universo universo = uni.getUniverso();
-        
-        area.setText(universo.toString());
-
-    }//GEN-LAST:event_jButton3MouseClicked
-
     private void b_crear_serMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear_serMouseClicked
         String archivo = "./archivos/Seres_vivos/";
         String nombre = t_ser_nombre.getText();
@@ -538,37 +459,29 @@ public class Principal extends javax.swing.JFrame {
         }
         
         
-        
-        String archivo3 = "./archivos/Universos/";
-        archivo += universo+".uni";
-        AdminUniverso_individual uni = new AdminUniverso_individual(archivo3);
-        
-        uni.cargarArchivo();
-        uni.getUniverso().setLista(servivo);
-        uni.escribirArchivo();
-        
-        
-        String archivo4 = "./archivos/Listas/Lista_de_universos.ltuni";
-        AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo4);
-        
-        int n = combo_universos.getSelectedIndex();
-        
-        ltuni.cargarArchivo();
-        ltuni.getLista().get(n).setLista(servivo);
-        ltuni.escribirArchivo();
+        try{
+            String archivo3 = "./archivos/Universos/";
+            archivo3 += universo+".uni";
+            AdminUniverso_individual uni = new AdminUniverso_individual(archivo3);
+
+            uni.cargarArchivo();
+            uni.getUniverso().setLista(servivo);
+            uni.escribirArchivo();
+
+
+            String archivo4 = "./archivos/Listas/Lista_de_universos.ltuni";
+            AdminUniverso_lista ltuni = new AdminUniverso_lista(archivo4);
+
+            int n = combo_universos.getSelectedIndex();
+
+            ltuni.cargarArchivo();
+            ltuni.getLista().get(n).setLista(servivo);
+            ltuni.escribirArchivo();
+        }catch(Exception e){
+            
+        }
         
     }//GEN-LAST:event_b_crear_serMouseClicked
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String archivo = "./archivos/Seres_vivos/";
-        String nom = nombre.getText();
-        archivo += nom+".ser";
-        AdminSerVivo_individual ser = new AdminSerVivo_individual(archivo);
-        ser.cargarArchivo();
-        SerVivo servivo = ser.getSer();
-        
-        area.setText(servivo.toString());
-    }//GEN-LAST:event_jButton1MouseClicked
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         String archivo2 = "./archivos/Listas/Lista_de_seres.ltser";
@@ -619,7 +532,6 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea area;
     private javax.swing.JRadioButton b_1;
     private javax.swing.JRadioButton b_10;
     private javax.swing.JRadioButton b_2;
@@ -637,8 +549,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_universos;
     private javax.swing.ButtonGroup escala_de_poder;
     private javax.swing.JButton iniciar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -649,15 +559,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
     javax.swing.JList<String> lista_seres;
-    private javax.swing.JTextField nombre;
     private javax.swing.JSpinner sp_edad;
     private javax.swing.JTextField t_ser_id;
     private javax.swing.JTextField t_ser_nombre;
